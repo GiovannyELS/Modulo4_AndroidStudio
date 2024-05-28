@@ -2,8 +2,8 @@ package com.example.alkewalletapp.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alkewalletapp.data.local.User
 import com.example.alkewalletapp.databinding.UsersItemBinding
@@ -20,7 +20,8 @@ class UserAdapter : ListAdapter<User, UserAdapter.UserViewHolder>(UserDiffCallba
         holder.bind(user)
     }
 
-    class UserViewHolder(private val binding: UsersItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class UserViewHolder(private val binding: UsersItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
             binding.textView15.text = user.name
             binding.textView16.text = "$${user.balance}"

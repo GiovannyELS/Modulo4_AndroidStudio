@@ -9,11 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.alkewalletapp.R
 import com.example.alkewalletapp.databinding.FragmentLoginPageBinding
 import com.example.alkewalletapp.presentation.viewmodel.LoginPageViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.example.alkewalletapp.presentation.viewmodel.LoginPageViewModelFactory
 
 class LoginPage : Fragment() {
@@ -25,14 +25,15 @@ class LoginPage : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sharedPreferences = requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        sharedPreferences =
+            requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         validator = ViewModelProvider(this, LoginPageViewModelFactory(sharedPreferences)).get(
-            LoginPageViewModel::class.java)
+            LoginPageViewModel::class.java
+        )
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLoginPageBinding.inflate(inflater, container, false)
         return binding.root
@@ -54,7 +55,9 @@ class LoginPage : Fragment() {
             if (isValid) {
                 navController.navigate(R.id.action_loginPage_to_homePage)
             } else {
-                Toast.makeText(requireContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT
+                ).show()
             }
         }
 

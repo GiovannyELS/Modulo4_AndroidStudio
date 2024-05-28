@@ -4,26 +4,51 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.alkewalletapp.R
-import com.example.alkewalletapp.data.local.User
+import com.example.alkewalletapp.data.local.Transaction
 
 class HomePageViewModel : ViewModel() {
 
-    private val _users = MutableLiveData<List<User>>()
-    val users: LiveData<List<User>> get() = _users
+    private val _transaction = MutableLiveData<MutableList<Transaction>>()
+    val transaction: LiveData<MutableList<Transaction>> get() = _transaction
+
 
     init {
-        loadUsers()
+        loadTransaction()
     }
 
-    private fun loadUsers() {
-        val exampleUsers = listOf(
-            User("1", "Alice", 150.0, R.drawable.profilepicture1),
-            User("2", "Giovanny", 100.0, R.drawable.profilepicture2),
-            User("3", "Charlie", 200.0, R.drawable.profilepicture3),
-            User("4", "David", 250.0, R.drawable.profilepicture4),
-            User("5", "Eve", 300.0, R.drawable.profilepicture5),
-            User("6", "Frank", 350.0, R.drawable.profilepicture6)
+
+    private fun loadTransaction() {
+        val exampleTransaction = mutableListOf(
+            Transaction(
+                R.drawable.profilepicture1, R.drawable.send_iconamarillo, "Juan",
+                "Oct 14,10:24", "-$", 100.0
+            ),
+            Transaction(
+                R.drawable.profilepicture2, R.drawable.request_iconazul, "Giovanny",
+                "Oct 16,01:10", "+$", 120.0
+            ),
+            Transaction(
+                R.drawable.profilepicture3, R.drawable.send_iconamarillo, "Maria",
+                "Oct 14,10:24", "-$", 200.0
+            ),
+            Transaction(
+                R.drawable.profilepicture4, R.drawable.send_iconamarillo, "Petra",
+                "Oct 20,11:25", "-$", 130.0
+            ),
+            Transaction(
+                R.drawable.profilepicture5, R.drawable.request_iconazul, "Marta",
+                "Oct 01,05:00", "+$", 300.0
+            ),
+            Transaction(
+                R.drawable.profilepicture6, R.drawable.request_iconazul, "Petronila",
+                "Oct 12,10:24", "+$", 600.0
+            ),
+            Transaction(
+                R.drawable.profilepicture1, R.drawable.send_iconamarillo, "Juan",
+                "Oct 14,10:24", "-$", 100.0
+            )
+
         )
-        _users.value = exampleUsers
+        _transaction.value = exampleTransaction
     }
 }

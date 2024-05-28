@@ -10,7 +10,7 @@ import com.example.alkewalletapp.R
 import com.example.alkewalletapp.data.local.Transaction
 
 class TransactionAdapter : RecyclerView.Adapter<TransactionAdapter.TransactionViewHolder>() {
-    private var transactions = mutableListOf<Transaction>()
+    var transactions = mutableListOf<Transaction>()
         set(value) {
             field = value
             notifyDataSetChanged()
