@@ -41,3 +41,5 @@ class RequestMoney : Fragment() {
         botonhome.setOnClickListener { navController.navigate(R.id.action_requestMoney_to_loginsignup) }
     }
 }
+
+

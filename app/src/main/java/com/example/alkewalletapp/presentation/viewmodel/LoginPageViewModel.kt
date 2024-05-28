@@ -13,3 +13,4 @@ class LoginPageViewModel(private val sharedPreferences: SharedPreferences) : Vie
         return username == storedEmail && password == storedPassword
     }
 }
+

@@ -61,6 +61,4 @@ class SignupPageViewModel(application: Application) : AndroidViewModel(applicati
     private fun validatePassword(password: String): Boolean {
         return password.length >= 8
     }
-
-
 }

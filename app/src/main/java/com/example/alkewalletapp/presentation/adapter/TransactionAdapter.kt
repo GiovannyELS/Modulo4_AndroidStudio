@@ -45,3 +45,4 @@ class TransactionAdapter : RecyclerView.Adapter<TransactionAdapter.TransactionVi
         val amount = view.findViewById<TextView>(R.id.textView16)
     }
 }
+

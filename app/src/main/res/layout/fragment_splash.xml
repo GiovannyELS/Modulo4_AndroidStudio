@@ -22,3 +22,4 @@ tools:context=".presentation.ui.fragments.Splash">
         android:layout_marginTop="71dp" />
 
 </RelativeLayout>
+

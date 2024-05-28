@@ -58,3 +58,5 @@ class SignupPage : Fragment() {
         _binding = null
     }
 }
+
+

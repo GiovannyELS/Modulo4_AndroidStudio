@@ -37,3 +37,5 @@ class Loginsignup : Fragment() {
         yatienescuenta.setOnClickListener { navController.navigate(R.id.action_loginsignup_to_loginPage) }
     }
 }
+
+

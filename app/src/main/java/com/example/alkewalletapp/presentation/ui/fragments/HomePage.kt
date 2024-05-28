@@ -61,3 +61,5 @@ class HomePage : Fragment() {
         binding.transactionAmount.text = "$ $userBalance"
     }
 }
+
+

@@ -40,3 +40,5 @@ class SendMoney : Fragment() {
         botonhome.setOnClickListener { navController.navigate(R.id.action_sendMoney_to_loginsignup) }
     }
 }
+
+
